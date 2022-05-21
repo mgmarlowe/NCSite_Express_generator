@@ -1,5 +1,3 @@
-/* const { application } = require("express");
-const { response } = require("express"); */
 const express = require("express");
 const Campsite = require("../models/campsite");
 
@@ -52,6 +50,7 @@ campsiteRouter
       .catch((err) => next(err));
   })
   .post((req, res) => {
+    res.statusCode = 403;
     res.end(
       `POST operation not supported on /campsites/${req.params.campsiteId}`
     );
